@@ -1,7 +1,17 @@
-export default function Home() {
+import { getMovies } from "@/api/getMovies";
+
+export default async function Home() {
+  const {movies} = await getMovies();
   return (
-    <div>
-      <h1>서버 컴포넌트입니다.</h1>
-    </div>
+    <section>
+      <ul>
+        {movies.map(movie => (
+          <li key={movie.id}>
+            {movie.title}
+          </li>
+
+        ))}
+      </ul>
+    </section>
   );
 }
