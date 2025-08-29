@@ -1,4 +1,5 @@
 import { getMovies } from "@/api/getMovies";
+import GoToMovieDetailLink from "./GoToMovieDetailLink";
 
 export default async function Home() {
   const {movies} = await getMovies();
@@ -7,9 +8,8 @@ export default async function Home() {
       <ul>
         {movies.map(movie => (
           <li key={movie.id}>
-            {movie.title}
+            <GoToMovieDetailLink movie={movie} />
           </li>
-
         ))}
       </ul>
     </section>
