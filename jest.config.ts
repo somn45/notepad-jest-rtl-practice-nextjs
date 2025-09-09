@@ -11,6 +11,13 @@ const config: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  transformIgnorePatterns: [
+    "/node_modules/(?!mongodb)/"
+  ],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
+  }
   // 각 테스트가 실행되기 전에 추가 설정 옵션을 추가합니다.
 }
  
