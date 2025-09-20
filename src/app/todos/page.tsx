@@ -10,7 +10,7 @@ export default async function Todos() {
 
   return (
     <section>
-      <form action={addTodo}>
+      <form data-testid="todo-form" action={addTodo}>
         <input type="text" name="todo" placeholder="할 일 입력" />
         <button type="submit">할 일 제출</button>
       </form>

@@ -11,7 +11,6 @@ const config: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transformIgnorePatterns: [
     "/node_modules/(?!mongodb)/"
   ],
@@ -20,6 +19,6 @@ const config: Config = {
   }
   // 각 테스트가 실행되기 전에 추가 설정 옵션을 추가합니다.
 }
- 
+
 // next/jest가 Next.js 구성을 로드할 수 있도록 createJestConfig가 이 방식으로 내보내집니다.
 export default createJestConfig(config)

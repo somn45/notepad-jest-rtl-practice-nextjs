@@ -7,6 +7,5 @@ interface Todos {
 export const getTodos = async () => {
   const db = (await connectDB).db("Cluster");
   const todos = await db.collection<Todos>("todos").find().toArray();
-  console.log(todos);
   return todos;
 }
